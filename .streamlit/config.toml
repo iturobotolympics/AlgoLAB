@@ -1,0 +1,8 @@
+[theme]
+primaryColor="#d56828"
+backgroundColor="#f8f0e8"
+secondaryBackgroundColor="#f2c896"
+textColor="#323232"
+
+[server]
+fileWatcherType = "poll"
