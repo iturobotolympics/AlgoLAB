@@ -1,4 +1,4 @@
-<h1 align="center">:play_or_pause_button: YOUTUBE VİDEOLARI</h1>
+<h1 align="center">⏩ YOUTUBE VİDEOLARI ⏪</h1>
 
    İTÜRO 2023  |   PROBLEM-1   |   PROBLEM-2
 :-------------:|:-------------:|:-------------:
