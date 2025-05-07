@@ -72,7 +72,7 @@ st.markdown("""
 # //////////////////////////////////////////////////////////////////////////////////////////////////////
 
 # Changeable Information////////////////////////////////////////////////////////////////////////////////
-year = "2024"
+year = "2025"
 # //////////////////////////////////////////////////////////////////////////////////////////////////////
 
 # Results Page//////////////////////////////////////////////////////////////////////////////////////////
@@ -161,11 +161,11 @@ if st.button("Sonuçları Göster"):
     T = np.zeros((num_competitors, 1), dtype=float)
     for competitor_index in range(num_competitors):
         competitor_scores = S[competitor_index, :]
-        T[competitor_index] = round(0.05 * (0.65 * competitor_scores[0] + 0.35 * competitor_scores[1]) +\
-                                    0.10 * (0.65 * competitor_scores[2] + 0.35 * competitor_scores[3]) +\
-                                    0.20 * (0.65 * competitor_scores[4] + 0.35 * competitor_scores[5]) +\
-                                    0.25 * (0.65 * competitor_scores[6] + 0.35 * competitor_scores[7]) +\
-                                    0.40 * (0.65 * competitor_scores[8] + 0.35 * competitor_scores[9]), 2)
+        T[competitor_index] = round(0.20 * (0.65 * competitor_scores[0] + 0.35 * competitor_scores[1]) +\
+                                    0.35 * (0.65 * competitor_scores[2] + 0.35 * competitor_scores[3]) +\
+                                    0.45 * (0.65 * competitor_scores[4] + 0.35 * competitor_scores[5]) +\
+                                    0 * (0.65 * competitor_scores[6] + 0.35 * competitor_scores[7]) +\
+                                    0 * (0.65 * competitor_scores[8] + 0.35 * competitor_scores[9]), 2)
     R = np.hstack((C, T))
     R_sorted = R[(-R[:, 1]).argsort()]
     # ==================================================================================================
