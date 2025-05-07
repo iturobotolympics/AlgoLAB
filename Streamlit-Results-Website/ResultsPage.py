@@ -91,7 +91,7 @@ if sample_data:
     num_competitors = 6
 else:
     InputLabel("Lütfen yarışmacı sayısını giriniz:")
-    num_competitors = st.number_input("-", min_value=5, step=1, label_visibility="collapsed")
+    num_competitors = st.number_input("-", min_value=3, step=1, label_visibility="collapsed")
 # ======================================================================================================
 
 # Table Title List======================================================================================
