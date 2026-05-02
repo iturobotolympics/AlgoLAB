@@ -122,7 +122,7 @@ if sample_data:
 				                ["Cansu", 100, 35, 100, 89, 100, 97, 100, 143, 100, 176]])
 else:
     InputLabel("Lütfen yarışmacıların her soruya ilişkin bilgilerini giriniz:")
-    competitor_data = np.hstack((np.array(["Yarışmacı"] * num_competitors).reshape(num_competitors, 1), np.zeros((num_competitors, 10), dtype=int)))
+    competitor_data = np.hstack((np.array(["Yarışmacı"] * num_competitors).reshape(num_competitors, 1), np.zeros((num_competitors, 8), dtype=int)))
 df_competitor_data = pd.DataFrame(competitor_data, columns=df_title_list)
 df_competitor_data.index = map(str, range(1, num_competitors + 1))
 df_competitor_data.index.name = "#"
