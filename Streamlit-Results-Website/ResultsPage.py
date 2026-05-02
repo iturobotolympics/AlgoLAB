@@ -72,7 +72,7 @@ st.markdown("""
 # //////////////////////////////////////////////////////////////////////////////////////////////////////
 
 # Changeable Information////////////////////////////////////////////////////////////////////////////////
-year = "2025"
+year = "2026"
 # //////////////////////////////////////////////////////////////////////////////////////////////////////
 
 # Results Page//////////////////////////////////////////////////////////////////////////////////////////
@@ -98,8 +98,7 @@ else:
 df_title_list = ["Yarışmacı", "P1 - Puan", "P1 - Kod Boyutu",\
                               "P2 - Puan", "P2 - Kod Boyutu",\
                               "P3 - Puan", "P3 - Kod Boyutu",\
-                              "P4 - Puan", "P4 - Kod Boyutu",\
-                              "P5 - Puan", "P5 - Kod Boyutu"]
+                              "P4 - Puan", "P4 - Kod Boyutu"]
 # ======================================================================================================
 
 # Table Column Configuration============================================================================
@@ -138,7 +137,7 @@ if st.button("Sonuçları Göster"):
     # Mapping Code Size=================================================================================
     mapped_min = 100
     mapped_max = 0
-    for col_index in [1, 3, 5, 7, 9]:
+    for col_index in [1, 3, 5, 7]:
         code_size_list = S[:, col_index]
         if sum(code_size_list == 0) == num_competitors:
             S[:, col_index] = np.zeros((num_competitors,))
@@ -161,11 +160,10 @@ if st.button("Sonuçları Göster"):
     T = np.zeros((num_competitors, 1), dtype=float)
     for competitor_index in range(num_competitors):
         competitor_scores = S[competitor_index, :]
-        T[competitor_index] = round(0.20 * (0.65 * competitor_scores[0] + 0.35 * competitor_scores[1]) +\
-                                    0.35 * (0.65 * competitor_scores[2] + 0.35 * competitor_scores[3]) +\
-                                    0.45 * (0.65 * competitor_scores[4] + 0.35 * competitor_scores[5]) +\
-                                    0 * (0.65 * competitor_scores[6] + 0.35 * competitor_scores[7]) +\
-                                    0 * (0.65 * competitor_scores[8] + 0.35 * competitor_scores[9]), 2)
+        T[competitor_index] = round(0.05 * (0.65 * competitor_scores[0] + 0.35 * competitor_scores[1]) +\
+                                    0.15 * (0.65 * competitor_scores[2] + 0.35 * competitor_scores[3]) +\
+                                    0.30 * (0.65 * competitor_scores[4] + 0.35 * competitor_scores[5]) +\
+                                    0.50 * (0.65 * competitor_scores[6] + 0.35 * competitor_scores[7]), 2)
     R = np.hstack((C, T))
     R_sorted = R[(-R[:, 1]).argsort()]
     # ==================================================================================================
